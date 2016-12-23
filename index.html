@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Page Title</title>
+   <link rel="css/stylesheet" href="style.css">
+   <!-- <script src="script.js"></script> -->
+   <script src="js/jquery.min.js"></script>
+   <script src="js/knockout-3.4.1.js"></script>
+   <script src="js/script.js"></script>
+</head>
+<body>
+  <div>
+    <p>Pull Github repositories info</p>
+    <!-- <a id="btn">click me</a> -->
+    <button id="btn">click me</button>
+
+  </div>
+  <div id="result">
+  <p>name:<input data-bind="value:name"></input></p>
+  <ul data-bind="foreach:repoList">
+    <li>Name:<span data-bind="text:name"></span></li>
+    <li>repo full name:<span data-bind="text:full_name"></span></li>
+    <li>Description:<span data-bind="text:description"></span></li>
+    <!-- <li>Languages:<span data-bind="text:languages_url"></span></li> -->
+    <!-- <li><a data-bind="attr: {href: languages_url}" target="_new">Languages:</a></li> -->
+
+    <!-- <li>Link to repository:<span data-bind="attr: { href: link_to_repository, title: details }"></span></li> -->
+    <li>Link to repository:<span data-bind="text:link_to_repository"></span></li>
+    <li>User:<span data-bind="text:user"></span></li>
+    <li>Link to user repositories:<span data-bind="text:user_repo"></span></li>
+    <hr>
+  </ul>
+  <hr>
+
+  <!-- <p>First name:<input data-bind="value:firstname"></input></p>
+  <p>First name:<span data-bind="text:firstname"></span></p> -->
+
+
+      <ul id="ghdata"></ul>
+  </div>
+</body>
+</html>
