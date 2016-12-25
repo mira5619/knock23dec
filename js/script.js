@@ -14,22 +14,6 @@ $(document).ready(function() {
           for (var i = 0; i < json.length; i++) {
                 var repository = json[i];
                 repositories.push(repository);
-
-          /*      var name = repository.name;
-          console.log('myname: '+ name);
-                var full_name = repository.full_name;
-                var user = repository.owner.login;
-                var user_repo = repository.owner.html_url;
-                var decription = repository.description;
-                var languages = repository.languages_url;
-                var link_to_repository = repository.html_url;
-*/
-
-         //build html
-                /*var build_html = '<li class="repo"><p><b>name: </b><a class="repo_info" href="#">'
-                 + name +'</p></a><p><strong>user: </strong><a class="user_info" href="#"<p>' + user +'</p></a></li>';
-                ghdata.append(build_html);*/
-
            }; //end of the loop
 
     console.log(repositories);
@@ -47,18 +31,8 @@ $(document).ready(function() {
 
  //********view model*******
 
-        var ViewModel =  function (data){
+        var ViewModel =  function (){
           var self = this;
-          this.name = ko.observable(data.name);
-          this.full_name = ko.observable(data.full_name);
-          this.user = ko.observable(data.owner.login);
-          this.user_repo = ko.observable(data.owner.html_url);
-          this.description = ko.observable(data.description);
-          this.languages = ko.observable(data.languages_url);
-
-          this.link_to_repository = ko.observable(data.html_url);
-
-          //this.details = ko.observable("Link to repository:")
 
           this.repoList = ko.observableArray([]);
 
@@ -68,12 +42,10 @@ $(document).ready(function() {
 
           // set first repo
           this.currentRepo = ko.observable(this.repoList()[0]);
-          //this.currentRepo = ko.observable(repositories[0]);
-  console.log(this.currentRepo);
 
         };
 
-        ko.applyBindings(new ViewModel(repository));
+        ko.applyBindings(new ViewModel());
 
           }).error(function(e){
         ghdata.text('Github Repositories Could Not Be Loaded');
