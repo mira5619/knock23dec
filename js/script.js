@@ -42,6 +42,9 @@ $(document).ready(function() {
 
           // set first repo
           this.currentRepo = ko.observable(this.repoList()[0]);
+          this.setRepo = function(clickedRepo) {
+            self.currentRepo(clickedRepo);
+          };
 
         };
 
