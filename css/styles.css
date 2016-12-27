@@ -1,0 +1,72 @@
+
+body {
+    font-family:  monospace;
+    font-weight: 200;
+    font-size: 16px;
+    text-align: center;
+    color: #444;
+}
+
+h2 {
+    font-weight: 200;
+    text-align: center;
+    padding-top: 20px;
+}
+
+ #main{
+    background: #EEEEEE;
+    width: 90vw;
+    min-height:120px;
+    margin: 0 auto;
+    padding-bottom: 10px
+
+    }
+
+#btn {
+    font-family: monospace;
+    width: 264px;
+    background: #FFC000;
+    padding: 10px 54px 10px 54px;
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0px;
+    text-align: center;
+    }
+
+#btn:hover {
+
+   box-shadow: 2px 2px 5px 2px grey;
+}
+
+.filter {
+    font-family:monospace;
+    font-size: 1.2em;
+    margin-left: 12px;
+    padding: 10px;
+    color:#ACACAC;
+    }
+
+.name {
+    background-color: #fff
+}
+
+.repositories {
+    width: 85vw;
+    background: #D8D8D8;
+    padding: 10px;
+    margin: 0 auto;
+    border: 1px solid #000;
+
+}
+
+ul {
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+}
+
+
+
+
+
+

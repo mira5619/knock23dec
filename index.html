@@ -2,41 +2,38 @@
 <html lang="en">
 <head>
    <meta charset="utf-8">
-   <title>Page Title</title>
-   <link rel="css/stylesheet" href="style.css">
-   <!-- <script src="script.js"></script> -->
+   <title>test API</title>
+   <link rel="stylesheet" href="css/styles.css">
    <script src="js/jquery.min.js"></script>
    <script src="js/knockout-3.4.1.js"></script>
    <script src="js/script.js"></script>
 </head>
 <body>
-  <div>
-    <p>Pull Github repositories info</p>
-    <button id="btn">click me</button>
-    <p>name:<input data-bind="value: name"></input></p>
-    <ul id="ghdata" data-bind="foreach: repoList">
-      <li><span data-bind="text: name, click: $parent.setRepo"></span></li>
-    </ul>
-  </div>
+  <main id='main'>
+    <h2>Press the button to display a list of github repositories</h2>
+    <button id="btn">Go</button>
+    <p><input type="text" class="filter" placeholder="Enter repository name" data-bind="value: searchStr, valueUpdate: 'afterkeydown'"></p>
+    <section class="repositories">
+      <ul data-bind="foreach:search()">
+        <li><b>Repository name:</b><span class="name" data-bind="text:name"></span></li>
+        <li><b>Repository full name:</b><span data-bind="text:full_name"></span></li>
+        <li><b>Description:</b><span data-bind="text:description"></span></li>
 
-  <div id="result" data-bind="with: currentRepo">
-  <ul>
-    <li>Name:<span data-bind="text:name"></span></li>
-    <li>repo full name:<span data-bind="text: full_name"></span></li>
-    <li>Description:<span data-bind="text: description"></span></li>
+        <!--
+        <li>Languages:<span data-bind="text:languages">
+            <ul data-bind="foreach:languages">
+                <li>language:<span data-bind="text:$data.language"></span></li>
+            </ul>
+        </span></li> -->
 
-    <!--  <li>Languages:<span data-bind="text:languages_url">-->
-      <!-- <ul data-bind="foreach:languages">
-        <li>language:<span data-bind="text:language"></span></li>
+        <li><b>Link to repository:</b><a data-bind="attr: {href: link_to_repository},text:link_to_repository" target="_new"></a></li>
+
+        <li><b>User name:</b><span data-bind="text:user"></span></li>
+
+        <li><b>Link to user repositories:</b><a data-bind="attr: {href: user_repo},text:user_repo" target="_new"></a></li>
+        <hr>
       </ul>
-    </span></li>
- -->
-    <li>Link to repository:<a data-bind="attr:{href: link_to_repository},text: link_to_repository" target="_new"></a></li>
-    <li>User:<span data-bind="text: user"></span></li>
-    <li>Link to user repositories:<a data-bind="attr: {href: user_repo},text: user_repo" target="_new"></a></li>
-    <hr>
-  </ul>
-  </div>
-
+    </section>
+  </main>
 </body>
 </html>
