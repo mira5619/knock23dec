@@ -11,7 +11,7 @@ $(document).ready(function() {
       for (var i = 0; i < json.length; i++) {
         var repository = json[i];
         repositories.push(repository);
-      }; //end of the loop
+      } //end of the loop
 
       //console.log(repositories);
       var Repo = function(data){
@@ -62,10 +62,10 @@ $(document).ready(function() {
       };
       ko.applyBindings(new ViewModel());
       }).error(function(e){
-        ghdata.text('Github Repositories Could Not Be Loaded');
+        ghdata.text("Github Repositories Could Not Be Loaded");
     });
 
-  }; //close loadData
-  $("#btn").on('click', loadData);
+  } //close loadData
+  $("#btn").on("click", loadData);
 
 }); //close document ready
