@@ -36,7 +36,7 @@ $(document).ready(function() {
         });
 
         this.searchStr = ko.observable("");
-
+        //filter
         this.search = ko.computed(function() {
           return ko.utils.arrayFilter(self.repoList(), function(repo) {
             if (repo.name.toLowerCase().indexOf(self.searchStr().toLowerCase())>=0) {
@@ -44,6 +44,21 @@ $(document).ready(function() {
             }
           });
         });
+
+        //sort
+        ko.observableArray.fn.sortByProperty = function(prop) {
+                this.sort(function(obj1, obj2) {
+                  if (obj1[prop] == obj2[prop])
+                   return 0;
+                  else if (obj1[prop] < obj2[prop])
+                     return -1 ;
+                      else
+                   return 1;
+                    });
+                  };
+        self.repoList.sortByProperty("name");
+        //this.repoList.sortByProperty('user');
+
       };
       ko.applyBindings(new ViewModel());
       }).error(function(e){
