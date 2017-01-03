@@ -19,7 +19,6 @@ h2 {
     min-height:120px;
     margin: 0 auto;
     padding-bottom: 10px
-
     }
 
 #btn {
@@ -34,7 +33,6 @@ h2 {
     }
 
 #btn:hover {
-
    box-shadow: 2px 2px 5px 2px grey;
 }
 
@@ -64,9 +62,3 @@ ul {
     list-style-type: none;
     padding: 0;
 }
-
-
-
-
-
-
