@@ -12,7 +12,7 @@
   <main id='main'>
     <h2>Press the button to display a list of github repositories</h2>
     <button id="btn">Go</button>
-    <p><input type="text" class="filter" placeholder="Enter repository name" data-bind="value: searchStr, valueUpdate: 'afterkeydown'"></p>
+    <p class="search hidden"><input type="text" class="filter" placeholder="Enter repository name" data-bind="value: searchStr, valueUpdate: 'afterkeydown'"></p>
     <section class="repositories hidden">
       <ul data-bind="foreach:search()">
         <li><b>Repository name:</b><span class="name" data-bind="text:name"></span></li>
