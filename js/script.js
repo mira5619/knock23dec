@@ -70,6 +70,8 @@ $(document).ready(function() {
     $(".repositories").removeClass("hidden");
 
     //$( "section:hidden" ).show( "fast" );
-    loadData();});
+    loadData();
+    $(".search").removeClass("hidden");
+  });
 
 }); //close document ready
