@@ -66,6 +66,10 @@ $(document).ready(function() {
     });
 
   } //close loadData
-  $("#btn").on("click", loadData);
+  $("#btn").on("click", function(){
+    $(".repositories").removeClass("hidden");
+
+    //$( "section:hidden" ).show( "fast" );
+    loadData();});
 
 }); //close document ready
